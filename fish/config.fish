@@ -1,4 +1,7 @@
 if status is-interactive
+    # Keybindings: use vi mode
+    set -g fish_key_bindings fish_vi_key_bindings
+
     # Git aliases
     alias g="git"
     alias ga="git add"
@@ -27,6 +30,9 @@ if status is-interactive
     alias gclean="git clean -fd && git reset --hard"
     alias gfix="git commit --amend --no-edit"
 
-    # Zoxide initialization
-    eval (zoxide init fish)
+    # Zoxide init
+    zoxide init fish | source
 end
+
+# Created by `pipx` on 2025-06-26 02:54:59
+set PATH $PATH /Users/gmartin/.local/bin
