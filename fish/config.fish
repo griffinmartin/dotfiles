@@ -34,5 +34,12 @@ if status is-interactive
     zoxide init fish | source
 end
 
+# NVM
+set -gx NVM_DIR "$HOME/.nvm"
+bass source /opt/homebrew/opt/nvm/nvm.sh
+function nvm
+    bass source /opt/homebrew/opt/nvm/nvm.sh ';' nvm $argv
+end
+
 # Created by `pipx` on 2025-06-26 02:54:59
-set PATH $PATH /Users/gmartin/.local/bin
+set PATH $PATH $HOME/.local/bin
